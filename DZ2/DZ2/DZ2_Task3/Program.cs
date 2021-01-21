@@ -13,7 +13,7 @@ namespace DZ2_Task3
          * Alexander Fakhrudinov = Александр Фахрудинов
          * asbuka@gmail.com
          * 
-         * Практическое задание 2 - 4
+         * Практическое задание 2 - действие 4
          * 
          * SUMMARY on solution:
          * Подготовить 4 проекта, которые будут выполнять следующие действия:
@@ -32,6 +32,67 @@ namespace DZ2_Task3
 
         static void Main(string[] args)
         {
+            // Для полного закрепления понимания простых типов найдите любой чек, либо фотографию этого чека в интернете и схематично нарисуйте его в консоли,
+            // только за место динамических, по вашему мнению, данных(это может быть дата, название магазина, сумма покупок) подставляйте переменные,
+            // которые были заранее заготовлены до вывода на консоль.
+
+            //зададим переменные
+            double totalSumm = 0;// сумма покупок
+            double totalNDS = 0;// подсчет НДС
+            double clientMoney = 1000D;// наличные кассиру
+            DateTime shoppingDay = new DateTime(2021, 1, 20, 19, 30, 05); //дата покупки
+
+            //"артикул", "наименование", "цена", "НДС", "количество"
+            //string[,] goods = new string[3, 4]; // массив с товарами. 3 наименования
+            string[,] goods = {
+                 {"1234123", "Хлеб батон нарезной", "48", "10", "1"},
+                 {"2345234", "Масло масляное", "220", "10", "1"},
+                 {"3453453", "Картоха прошлогодняя", "54,5", "10", "2"},
+                 {"6798678", "Пивас Безалкогольный", "40,98", "20", "5"}
+                };
+
+            Console.WriteLine("Практическое задание 2 - действие 4\n");
+
+            //Вывести заголовок
+            Console.WriteLine("Кассовый чек №123456789\n");
+            Console.WriteLine("артикул  наименование                      цена  НДС        кол-во");
+
+            //вывести и рассчитать массив
+            int rows = goods.GetUpperBound(0) + 1;
+            int columns = goods.Length / rows;
+
+            for (int i = 0; i < rows; i++)
+            {
+                //Артикул - выводим как есть.
+                Console.Write(goods[i, 0] + "  ");
+
+                //Наименование - приводим к единой длинне. ну 30 к примеру
+                Console.Write(goods[i, 1].PadRight(30));
+
+                //цена - в double
+                double price = Double.Parse(goods[i, 2]);
+                Console.Write(String.Format("{0:f}", price).PadLeft(8));
+
+                //НДС - 
+                double currentNDS = Double.Parse(goods[i, 3]);
+                Console.Write($"  НДС{ goods[i, 3]}% ");
+
+                //Количество 
+                double currentPieces = Double.Parse(goods[i, 4]);
+                Console.Write(goods[i, 4].PadLeft(5));
+
+                //добавляем объем покупки к общему объему
+                totalSumm = totalSumm + (price * currentPieces);
+                totalNDS = totalNDS + ((price * currentPieces) / 100) * currentNDS;
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine($"\nИтого {String.Format("{0:f}", totalSumm)} рублей, в том числе НДС {String.Format("{0:f}", totalNDS)} рублей ");
+            Console.WriteLine($"Принято {String.Format("{0:f}", clientMoney)} рублей \t Сдача {String.Format("{0:f}", clientMoney - totalSumm)} рублей.");
+            Console.WriteLine("Кассир: Пупкин В. \t " + shoppingDay);
+
+            Console.Read();
         }
     }
 }

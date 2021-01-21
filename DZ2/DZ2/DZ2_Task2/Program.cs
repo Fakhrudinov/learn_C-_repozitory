@@ -8,7 +8,7 @@ namespace DZ2_Task2
          * Alexander Fakhrudinov = Александр Фахрудинов
          * asbuka@gmail.com
          * 
-         * Практическое задание 2 - 3
+         * Практическое задание 2 - действие 3
          * 
          * SUMMARY on solution:
          * Подготовить 4 проекта, которые будут выполнять следующие действия:
@@ -27,7 +27,76 @@ namespace DZ2_Task2
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Практическое задание 2 - действие 3\n Способ 1.");
+
+            // Определить, является ли введённое пользователем число чётным.
+            Console.WriteLine("Пожалуйста, введите число.");
+            string userDigit = Console.ReadLine();
+            string userDigitCleaned = userDigit.Trim().Replace(".", "");//убираем знак, тем самым получая целое число
+            userDigitCleaned = userDigitCleaned.Replace(",", "");
+
+            int digit;
+            if (!Int32.TryParse(userDigitCleaned, out digit))
+            {
+                Console.WriteLine($"К сожалению, не удалось распознать введенное значение {userDigit}, программа будет завершена.");
+                Console.Read();
+                return;
+            }
+
+            Console.Write("Введенное число " + userDigit);
+            //если % > 0 то нечетное
+            if (digit % 2 > 0)
+            {
+                Console.Write(" нечётное.");
+            }
+            else
+            {
+                Console.Write(" чётное.");
+            }
+            Console.WriteLine("\n");
+
+
+            Console.WriteLine("Практическое задание 2 - действие 3 \n Способ 2.");
+
+            // Определить, является ли введённое пользователем число чётным. Способ 2 switch
+            Console.WriteLine("Пожалуйста, введите число.");
+            userDigit = Console.ReadLine();
+            userDigitCleaned = userDigit.Trim().Replace(".", "");//убираем знак, тем самым получая целое число
+            userDigitCleaned = userDigitCleaned.Replace(",", "");
+
+            if (userDigitCleaned.Length > 1)// фактически для понимания чет/нечет нас интересует только последняя цифра в числе.
+            {
+                userDigitCleaned = userDigitCleaned.Substring(userDigitCleaned.Length - 1);
+            }
+
+            if (!Int32.TryParse(userDigitCleaned, out digit))
+            {
+                Console.WriteLine($"К сожалению, не удалось распознать введенное значение {userDigit}, программа будет завершена.");
+                Console.Read();
+                return;
+            }
+
+            string flagEven = "";
+            switch (digit)
+            {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                case 8:
+                    flagEven = "чётное";
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 9:
+                    flagEven = "нечётное";
+                    break;
+            }
+
+            Console.Write($"Введенное число {userDigit} {flagEven}");
+            Console.Read();
         }
     }
 }

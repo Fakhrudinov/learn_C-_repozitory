@@ -12,7 +12,7 @@ namespace DZ2_Task1
          * Alexander Fakhrudinov = Александр Фахрудинов
          * asbuka@gmail.com
          * 
-         * Практическое задание 2 - 1,2,5
+         * Практическое задание 2 - действия 1,2,5
          * 
          * SUMMARY on solution:
          * Подготовить 4 проекта, которые будут выполнять следующие действия:
@@ -32,6 +32,85 @@ namespace DZ2_Task1
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Практическое задание 2 - действия 1,2,5\n");
+
+            // запросить минимальную температуру
+            Console.WriteLine("Пожалуйста, введите минимальную температуру за прошедшие сутки. \nВводите только числа, знак минус, если нужен разделитель - запятую.");
+            string minTemperature = Console.ReadLine();
+            minTemperature = minTemperature.Trim().Replace('.',',');
+
+            double minValue;
+            if (!Double.TryParse(minTemperature, out minValue))
+            {
+                Console.WriteLine($"К сожалению, не удалось распознать введенное значение {minTemperature}, программа будет завершена.");
+                Console.Read();
+                return;
+            }
+
+            // запросить максимальную температуру
+            Console.WriteLine("\nПожалуйста, введите максимальную температуру за прошедшие сутки. \nВводите только числа, если нужен разделитель - запятую, знак минус");
+            string maxTemperature = Console.ReadLine();
+            maxTemperature = maxTemperature.Trim().Replace('.', ',');
+
+            double maxValue;
+            if (!Double.TryParse(maxTemperature, out maxValue))
+            {
+                Console.WriteLine($"К сожалению, не удалось распознать введенное значение {maxTemperature}, программа будет завершена.");
+                Console.Read();
+                return;
+            }
+
+            if (maxValue < minValue)
+            {
+                Console.WriteLine($"Введенные вами данные, возможно, некорректны. Макимальная температура {maxValue} не может быть меньше минимальной {minValue}.");
+            }
+
+            // вывести среднюю температуру
+            double averageTemperature = (maxValue + minValue) / 2;
+            Console.WriteLine("Спасибо. Средняя суточная температура равна " + averageTemperature);
+
+            // запросить порядковый номер месяца.
+            Console.WriteLine("\nПожалуйста, введите порядковый номер месяца");
+            string month = Console.ReadLine();
+            
+            // вывести название месяца
+            int monthInt;
+            if (!Int32.TryParse(month, out monthInt))
+            {
+                Console.WriteLine($"К сожалению, не удалось распознать введенное значение {month}, программа будет завершена.");
+                Console.Read();
+                return;
+            }
+
+            if (monthInt > 12 || monthInt < 1)
+            {
+                Console.WriteLine("Месяца с таким номером не существует!");
+                Console.Read();
+                return;
+            }
+
+            DateTime date = new DateTime(2021, monthInt, 1);
+            Console.WriteLine($"Вы ввели {month}, этот месяц - {date.ToString("MMMM")}.");
+
+            // если месяц = зима и если средняя темп > 0 
+            //  вывести сообщение «Дождливая зима»
+            bool winter = false;
+            switch (monthInt)
+            {
+                case 12:
+                case 1:
+                case 2:
+                    winter = true;
+                    break;                
+            }
+
+            if (winter && averageTemperature > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Дождливая зима");
+            }
+
+            Console.Read();
         }
     }
 }
