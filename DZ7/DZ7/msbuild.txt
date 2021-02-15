@@ -1,0 +1,62 @@
+**********************************************************************
+** Visual Studio 2019 Developer Command Prompt v16.8.4
+** Copyright (c) 2020 Microsoft Corporation
+**********************************************************************
+
+E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7>msbuild DZ7.sln -p:Configuration=release
+Microsoft (R) Build Engine версии 16.8.3+39993bd9d для .NET Framework
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Выполняется последовательная сборка проектов в этом решении. Чтобы включить параллельную сборку, добавьте параметр "-m".
+Сборка начата 08.02.2021 21:11:08.
+Проект "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7.sln" в узле 1 (целевые объекты по умолч
+анию).
+ValidateSolutionConfiguration:
+  Создание конфигурации решения "release|Any CPU".
+Проект "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7.sln" (1) выполняет сборку "E:\Downloads
+\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\DZ7.csproj" (2) в узле 1 (целевые объекты по умолчанию).
+PrepareForBuild:
+  Создание каталога "bin\Release\".
+  Создание каталога "obj\Release\".
+GenerateBindingRedirects:
+  Нет предлагаемых перенаправлений привязки от ResolveAssemblyReferences.
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:17
+  01,1702 /fullpaths /nostdlib+ /platform:anycpu32bitpreferred /errorreport:prompt /warn:4 /define:TRACE /highentropyva
+  + /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.d
+  ll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /r
+  eference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" /refe
+  rence:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtens
+  ions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Dat
+  a.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll" /
+  reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll"
+  /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" /ref
+  erence:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll" /de
+  bug:pdbonly /filealign:512 /optimize+ /out:obj\Release\DZ7.exe /subsystemversion:6.00 /target:exe /utf8output /determ
+  inistic+ /langversion:7.3 Program.cs Properties\AssemblyInfo.cs "obj\Release\.NETFramework,Version=v4.7.2.AssemblyAtt
+  ributes.cs"
+  Использование общей компиляции с компилятором из каталога C:\Program Files (x86)\Microsoft Visual Studio\2019\Communi
+  ty\MSBuild\Current\Bin\Roslyn
+_CopyAppConfigFile:
+  Копирование файла из "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\App.config" в "E:\Downl
+  oads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\bin\Release\DZ7.exe.config".
+CopyFilesToOutputDirectory:
+  Копирование файла из "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\obj\Release\DZ7.exe" в
+  "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\bin\Release\DZ7.exe".
+  DZ7 -> E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\bin\Release\DZ7.exe
+  Копирование файла из "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\obj\Release\DZ7.pdb" в
+  "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\bin\Release\DZ7.pdb".
+Сборка проекта "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7\DZ7.csproj" завершена (целевые
+объекты по умолчанию).
+
+Сборка проекта "E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7\DZ7.sln" завершена (целевые объекты
+ по умолчанию).
+
+
+Сборка успешно завершена.
+    Предупреждений: 0
+    Ошибок: 0
+
+Прошло времени 00:00:00.46
+
+E:\Downloads\Обучение\C#\DZ_Repozitoriy\learn_C#_repozitory\DZ7\DZ7>
